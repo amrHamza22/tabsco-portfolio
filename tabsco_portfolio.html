@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TABSCO Company Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --dark-teal:   #1A5C55;
+    --deep-teal:   #0F3D37;
+    --mid-teal:    #2A7A70;
+    --accent-teal: #3BA898;
+    --sage:        #C8D4A8;
+    --light-sage:  #E8EDDA;
+    --cream:       #F4F1E8;
+    --cream2:      #EDE9DC;
+    --white:       #FFFFFF;
+    --dark-text:   #1A2E2A;
+    --body-text:   #2C3E39;
+    --gray-text:   #5A6B66;
+    --gold-accent: #B8A875;
+  }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--dark-text);
+    background: white;
+    font-size: 9pt;
+  }
+
+  /* ─── PAGE WRAPPER ─── */
+  .page {
+    width: 297mm;
+    height: 210mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    background: var(--cream);
+    margin: auto auto;
+    margin-top: auto;
+  box-shadow: 2px 8px 13px #898383e3;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  }
+  .page:last-child { page-break-after: avoid; }
+
+  /* ─── SHARED HEADER STRIP ─── */
+  .page-header {
+    position: absolute;
+    top: 10mm;
+    right: 12mm;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+  }
+  .logo-small {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .logo-icon-small {
+    width: 32px;
+    height: 32px;
+  }
+  .logo-text-small {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14pt;
+    font-weight: 700;
+    color: var(--dark-teal);
+    letter-spacing: 2px;
+  }
+  .logo-sub-small {
+    font-size: 5pt;
+    color: var(--mid-teal);
+    letter-spacing: 1px;
+    display: block;
+    font-weight: 400;
+  }
+  .website-pill {
+    background: transparent;
+    border: 1.5px solid var(--dark-teal);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 7.5pt;
+    color: var(--dark-teal);
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 12px;
+  }
+
+  /* ─── WAVE DECORATION SVG ─── */
+  .wave-deco {
+    position: absolute;
+    opacity: 0.18;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 1 — COVER
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .cover {
+    background: var(--cream);
+    display: flex;
+  }
+  .cover-left {
+    width: 42%;
+    height: 100%;
+    background: var(--cream);
+    padding: 16mm 10mm 10mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+  .cover-logo-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cover-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cover-logo-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28pt;
+    font-weight: 700;
+    color: var(--dark-teal);
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+  .cover-tagline {
+    font-size: 7.5pt;
+    color: var(--mid-teal);
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--accent-teal);
+    margin: 8mm 0 6mm;
+  }
+  .cover-headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18pt;
+    font-weight: 600;
+    color: var(--deep-teal);
+    line-height: 1.35;
+    margin-bottom: 6mm;
+  }
+  .cover-desc {
+    font-size: 8.5pt;
+    color: var(--body-text);
+    line-height: 1.6;
+    max-width: 90%;
+  }
+  .cover-website {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--dark-teal);
+    letter-spacing: 1px;
+    font-family: 'Inter', Arial, sans-serif;
+    margin-top: auto;
+    text-decoration: none;
+  }
+  .cover-right {
+    width: 58%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-right-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cover-right-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--cream) 0%, transparent 20%);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 2 — TABLE OF CONTENTS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .toc-page {
+    background: var(--deep-teal);
+  }
+  .toc-left {
+    position: absolute;
+    left: 0; top: 0;
+    width: 44%;
+    height: 100%;
+    background: var(--dark-teal);
+    padding: 16mm 10mm 10mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .toc-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32pt;
+    font-weight: 700;
+    color: var(--sage);
+    line-height: 1.2;
+    margin-bottom: 6mm;
+  }
+  .toc-sub {
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+  }
+  .toc-right {
+    position: absolute;
+    right: 0; top: 0;
+    width: 56%;
+    height: 100%;
+    padding: 18mm 14mm 14mm 10mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    background: rgba(255,255,255,0.07);
+    border-left: 3px solid var(--accent-teal);
+    transition: background 0.2s;
+  }
+  .toc-num {
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--accent-teal);
+    width: 22px;
+    flex-shrink: 0;
+  }
+  .toc-label {
+    font-size: 9pt;
+    color: var(--white);
+    font-weight: 400;
+    flex: 1;
+  }
+  .toc-arrow {
+    font-size: 9pt;
+    color: var(--sage);
+    margin-left: 6px;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 3 — ABOUT US
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .about-left {
+    position: absolute;
+    left: 0; top: 0;
+    width: 48%;
+    height: 100%;
+    background: var(--dark-teal);
+    padding: 16mm 12mm 12mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .section-title-light {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30pt;
+    font-weight: 700;
+    color: var(--sage);
+    margin-bottom: 6mm;
+    line-height: 1.1;
+  }
+  .body-text-light {
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.75;
+  }
+  .about-right {
+    position: absolute;
+    right: 0; top: 0;
+    width: 52%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .about-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .curved-divider {
+    position: absolute;
+    left: 46%;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 5;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 4 — VISION & MISSION
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .vm-page {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+  }
+  .vm-top-img {
+    width: 100%;
+    height: 45%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+  }
+  .vm-bottom {
+    flex: 1;
+    display: flex;
+    padding: 0 14mm;
+    gap: 0;
+  }
+  .vm-col {
+    flex: 1;
+    padding: 8mm 10mm 8mm 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .vm-col:first-child {
+    border-right: 2px solid var(--accent-teal);
+    padding-right: 10mm;
+  }
+  .vm-col:last-child {
+    padding-left: 10mm;
+  }
+  .vm-col-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16pt;
+    font-weight: 600;
+    color: var(--dark-teal);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .star-icon { color: var(--dark-teal); font-size: 10pt; }
+  .vm-body { font-size: 8pt; color: var(--body-text); line-height: 1.7; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 5 — CORE VALUES / WHY US
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .why-left {
+    position: absolute;
+    left: 0; top: 0;
+    width: 48%;
+    height: 100%;
+    background: var(--dark-teal);
+    padding: 14mm 12mm 12mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8mm;
+  }
+  .why-right {
+    position: absolute;
+    right: 0; top: 0;
+    width: 52%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .why-right img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center top;
+  }
+  .value-card {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 8px 12px 8px 10px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .value-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--sage);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16pt;
+  }
+  .value-text-wrap {}
+  .value-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 3px;
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .value-body {
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.80);
+    line-height: 1.55;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 6 — OUR SERVICES OVERVIEW
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .services-page {
+    background: var(--light-sage);
+    padding: 12mm 14mm 10mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .page-title-center {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24pt;
+    font-weight: 700;
+    color: var(--dark-teal);
+    text-align: center;
+    margin-bottom: 2mm;
+  }
+  .title-deco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6mm;
+  }
+  .title-deco-line {
+    width: 40px; height: 2px;
+    background: var(--dark-teal);
+  }
+  .title-deco-cross {
+    width: 12px; height: 12px;
+    position: relative;
+  }
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10mm;
+  flex:1;
+  margin-top:2mm;
+}
+.svc-card{
+  background:var(--white);
+  border-radius:14px;
+  padding:12px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  border-top:4px solid var(--dark-teal);
+  box-shadow:0 10px 22px rgba(0,0,0,0.08);
+}
+  .svc-icon-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 3px;
+  }
+  .svc-icon {
+    font-size: 18pt;
+    color: var(--dark-teal);
+  }
+  .svc-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--dark-teal);
+  }
+  .svc-body {
+    font-size: 7.5pt;
+    color: var(--gray-text);
+    line-height: 1.55;
+  }
+  .svc-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.08);
+    margin: 2px 0;
+  }
+  .svc-link {
+    font-size: 7pt;
+    color: var(--accent-teal);
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 7 — KSA COMPANY FORMATION
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .ksa-page {
+    background: var(--cream);
+    padding: 12mm 14mm 10mm;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .ksa-top {
+    display: flex;
+    gap: 8mm;
+    margin-bottom: 6mm;
+  }
+  .ksa-title-block {
+    flex: 1;
+  }
+  .section-title-dark {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26pt;
+    font-weight: 700;
+    color: var(--dark-teal);
+    line-height: 1.1;
+    margin-bottom: 3mm;
+  }
+  .section-subtitle {
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--mid-teal);
+    letter-spacing: 0.5px;
+    font-family: 'Inter', Arial, sans-serif;
+  }
+  .ksa-body {
+    display: flex;
+    gap: 6mm;
+    flex: 1;
+  }
+  .ksa-text-card {
+    flex: 1.2;
+    background: var(--dark-teal);
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ksa-text-card p {
+    font-size: 8pt;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.7;
+  }
+  .ksa-img-wrap {
+    flex: 0.9;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .ksa-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .ksa-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background: var(--dark-teal);
+    color: white;
+    font-size: 7.5pt;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 8 — THE PROCESS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .process-page {
+    background: var(--light-sage);
+    padding: 12mm 14mm 10mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .process-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8mm;
+    margin-bottom: 8mm;
+  }
+  .title-accent-bar {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-top: 4px;
+  }
+  .bar-filled { width: 30px; height: 4px; background: var(--dark-teal); border-radius: 2px; }
+  .bar-empty  { width: 20px; height: 4px; background: var(--accent-teal); border-radius: 2px; }
+  .process-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6mm;
+    flex: 1;
+  }
+  .process-col {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .process-col-header {
+    background: var(--dark-teal);
+    padding: 8px 12px;
+    color: var(--sage);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.35;
+  }
+  .process-col-tag {
+    font-size: 7pt;
+    color: rgba(200,212,168,0.75);
+    text-align: center;
+    display: block;
+    margin-top: 2px;
+  }
+  .process-col-body {
+    padding: 8px 10px;
+    flex: 1;
+  }
+  .process-col-body p {
+    font-size: 7.5pt;
+    color: var(--body-text);
+    line-height: 1.6;
+    margin-bottom: 5px;
+  }
+  .process-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .process-list li {
+    font-size: 7pt;
+    color: var(--body-text);
+    padding: 2px 0 2px 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .process-list li::before {
+    content: counter(list-counter) '.';
+    counter-increment: list-counter;
+    position: absolute;
+    left: 0;
+    color: var(--dark-teal);
+    font-weight: 700;
+  }
+  .process-col-body ol {
+    counter-reset: list-counter;
+    padding: 0; margin: 0;
+    list-style: none;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 9 — HUMAN RESOURCES
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .hr-page {
+    background: var(--cream);
+    display: flex;
+  }
+  .hr-left {
+    width: 30%;
+    height: 100%;
+    background: var(--dark-teal);
+    padding: 14mm 10mm 10mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .hr-right {
+    flex: 1;
+    padding: 12mm 14mm 10mm 10mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .numbered-list-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm;
+    margin-top: 6mm;
+    align-items: start;
+  }
+  .num-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .num-bubble {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--dark-teal);
+    flex-shrink: 0;
+    border: 2px solid var(--dark-teal);
+  }
+  .num-label {
+    font-size: 8.5pt;
+    color: var(--dark-teal);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 10 — LEGAL SERVICES
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .legal-page {
+    background: var(--light-sage);
+    display: flex;
+  }
+  .legal-left {
+    width: 32%;
+    height: 100%;
+    position: relative;
+    background: var(--sage);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14mm 10mm 10mm 14mm;
+    overflow: hidden;
+  }
+  .legal-right {
+    flex: 1;
+    padding: 12mm 14mm 10mm 12mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .legal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm;
+    margin-top: 6mm;
+  }
+  .legal-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .legal-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--dark-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .legal-item-text {
+    font-size: 8pt;
+    color: var(--body-text);
+    line-height: 1.5;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 11 — TRANSLATION SERVICES
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .trans-page {
+    background: var(--cream);
+    display: flex;
+  }
+  .trans-left {
+    width: 35%;
+    height: 100%;
+    background: var(--dark-teal);
+    padding: 14mm 10mm 10mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6mm;
+    position: relative;
+    overflow: hidden;
+  }
+  .trans-right {
+    flex: 1;
+    padding: 12mm 14mm 10mm 10mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .step-list { display: flex; flex-direction: column; gap: 5mm; }
+  .step-item { display: flex; gap: 10px; align-items: flex-start; }
+  .step-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--sage);
+    color: var(--dark-teal);
+    font-weight: 700;
+    font-size: 8.5pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-text {
+    font-size: 8.5pt;
+    color: var(--dark-teal);
+    font-weight: 500;
+    padding-top: 5px;
+  }
+  .lang-bubbles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5mm;
+    margin-top: 6mm;
+  }
+  .lang-bubble {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--dark-teal);
+    border: 2px solid var(--accent-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9pt;
+    font-weight: 700;
+    color: white;
+    margin: 0 auto;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 12 — ACCOUNTING & FINANCE
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .acc-page {
+    background: var(--light-sage);
+    display: flex;
+  }
+  .acc-left {
+    width: 34%;
+    height: 100%;
+    background: var(--sage);
+    padding: 14mm 10mm 10mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .acc-right {
+    flex: 1;
+    padding: 12mm 14mm 10mm 10mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .acc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm;
+    margin-top: 6mm;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 13 — WORK MECHANISM
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .wm-page {
+    background: var(--cream);
+    padding: 12mm 14mm 10mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .wm-intro {
+    font-size: 9pt;
+    color: var(--body-text);
+    line-height: 1.6;
+    max-width: 70%;
+    margin: 4mm 0 6mm;
+  }
+  .wm-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .wm-step {
+    display: flex;
+    flex-direction: column;
+  }
+  .wm-step-header {
+    background: var(--sage);
+    color: var(--dark-teal);
+    font-size: 10pt;
+    font-weight: 700;
+    font-family: 'Playfair Display', Georgia, serif;
+    padding: 6px 10px;
+    text-align: center;
+  }
+  .wm-step-body {
+    background: var(--dark-teal);
+    flex: 1;
+    padding: 8px 10px;
+  }
+  .wm-step-sub {
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--sage);
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.3px;
+  }
+  .wm-step-list {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  .wm-step-list li {
+    font-size: 6.5pt;
+    color: rgba(255,255,255,0.85);
+    padding: 2px 0 2px 10px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .wm-step-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-teal);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 14 — STATS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .stats-page {
+    background: var(--deep-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+  }
+  .stats-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--dark-teal);
+    opacity: 0.80;
+  }
+  .stats-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20mm;
+    padding: 10mm 20mm;
+  }
+  .stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .stat-icon { font-size: 28pt; color: var(--sage); margin-bottom: 4px; }
+  .stat-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36pt;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 8.5pt;
+    color: var(--sage);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(200,212,168,0.4);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 15 — CONTACT US
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .contact-page {
+    background: var(--dark-teal);
+    display: flex;
+  }
+  .contact-left {
+    width: 44%;
+    height: 100%;
+    padding: 14mm 12mm 12mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+  .contact-right {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  .contact-right img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .contact-right-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--dark-teal) 0%, transparent 30%);
+  }
+  .contact-logo-area {
+    position: absolute;
+    top: 10mm;
+    right: 12mm;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    padding: 8px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    z-index: 10;
+  }
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+    margin-top: 8mm;
+  }
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .contact-icon-circle {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--mid-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14pt;
+    color: white;
+  }
+  .contact-info {
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.6;
+  }
+  .contact-info a {
+    color: var(--sage);
+    text-decoration: underline;
+  }
+
+  /* ─── LOGO SVG INLINE ─── */
+  .logo-svg { width: 38px; height: 38px; }
+  .logo-svg-small { width: 28px; height: 28px; }
+
+  @page {
+    size: 297mm 210mm landscape;
+    margin: 0;
+  }
+  @media print {
+    body { width: 297mm; }
+    .page { page-break-after: always; }
+  }
+  /* ─────────────────────────────────────
+   HOVER EFFECTS + ANIMATIONS ONLY
+───────────────────────────────────── */
+
+/* Smooth global transitions */
+a,
+.website-pill,
+.svc-card,
+.value-card,
+.toc-item,
+.contact-icon-circle,
+.lang-bubble,
+.num-bubble,
+.legal-item,
+.process-col,
+.stat-item {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    opacity 0.35s ease;
+}
+
+/* General hyperlink hover */
+a {
+  position: relative;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+/* Underline animation for links */
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Cover website link */
+.cover-website:hover {
+  transform: translateY(-2px);
+  color: var(--accent-teal);
+}
+
+/* Website pill hover */
+.website-pill:hover {
+  background: var(--dark-teal);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26, 92, 85, 0.18);
+}
+
+/* Service links */
+.svc-link:hover {
+  color: var(--dark-teal);
+  transform: translateX(4px);
+}
+
+/* Contact links */
+.contact-info a:hover {
+  color: var(--white);
+}
+
+/* TOC hover */
+.toc-item:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateX(6px);
+}
+
+/* Service cards animation + hover */
+.svc-card {
+  animation: fadeUp 0.8s ease both;
+}
+
+.svc-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 14px 30px rgba(15, 61, 55, 0.18);
+  border-top-color: var(--accent-teal);
+}
+
+.svc-card:hover .svc-icon {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+.svc-icon {
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+/* Value cards */
+.value-card {
+  animation: fadeLeft 0.8s ease both;
+}
+
+.value-card:hover {
+  transform: translateX(6px);
+  background: rgba(255,255,255,0.16);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+}
+
+/* Process cards */
+.process-col {
+  animation: fadeUp 0.9s ease both;
+}
+
+.process-col:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(26, 92, 85, 0.16);
+}
+
+/* Stats animation */
+.stat-item {
+  animation: zoomIn 0.9s ease both;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.stat-icon {
+  transition: transform 0.35s ease;
+}
+
+.stat-item:hover .stat-icon {
+  transform: scale(1.15);
+}
+
+/* Contact icons */
+.contact-icon-circle:hover {
+  transform: scale(1.08);
+  background: var(--accent-teal);
+}
+
+/* Language bubbles */
+.lang-bubble:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 8px 20px rgba(15, 61, 55, 0.2);
+}
+
+/* Number bubbles */
+.num-item:hover .num-bubble,
+.legal-item:hover .legal-num {
+  transform: scale(1.08);
+}
+
+/* Subtle entrance animations */
+.cover-left,
+.about-left,
+.why-left,
+.services-grid,
+.stats-content,
+.contact-left {
+  animation: fadeUp 1s ease both;
+}
+
+.cover-right,
+.about-right,
+.why-right,
+.contact-right {
+  animation: fadeIn 1.2s ease both;
+}
+
+/* Stagger service cards */
+.services-grid .svc-card:nth-child(1) { animation-delay: 0.05s; }
+.services-grid .svc-card:nth-child(2) { animation-delay: 0.12s; }
+.services-grid .svc-card:nth-child(3) { animation-delay: 0.19s; }
+.services-grid .svc-card:nth-child(4) { animation-delay: 0.26s; }
+.services-grid .svc-card:nth-child(5) { animation-delay: 0.33s; }
+.services-grid .svc-card:nth-child(6) { animation-delay: 0.40s; }
+
+/* Stagger value cards */
+.why-left .value-card:nth-of-type(1) { animation-delay: 0.1s; }
+.why-left .value-card:nth-of-type(2) { animation-delay: 0.2s; }
+.why-left .value-card:nth-of-type(3) { animation-delay: 0.3s; }
+
+/* Floating video effect */
+.cover-right video,
+.contact-right video {
+  animation: slowFloat 8s ease-in-out infinite;
+  transition: transform 0.5s ease;
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slowFloat {
+  0%, 100% {
+    transform: scale(1.03) translateY(0);
+  }
+  50% {
+    transform: scale(1.06) translateY(-6px);
+  }
+}
+/* CORE VALUES PAGE */
+
+.core-card{
+  background:white;
+  border-radius:14px;
+  padding:18px 20px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  border-left:5px solid var(--dark-teal);
+  box-shadow:0 10px 22px rgba(0,0,0,0.08);
+  transition:all .35s ease;
+}
+
+.core-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 35px rgba(0,0,0,0.12);
+  border-left-color:var(--accent-teal);
+}
+
+.core-num{
+  font-family:'Playfair Display',serif;
+  font-size:18pt;
+  font-weight:700;
+  color:var(--accent-teal);
+  min-width:40px;
+}
+
+.core-title{
+  font-size:13pt;
+  font-style:italic;
+  color:#183E4C;
+  font-weight:500;
+}
+.market-img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:4px;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     PAGE 1 — COVER
+═══════════════════════════════════ -->
+<div class="page cover">
+
+  <div class="cover-left">
+    <div class="cover-logo-wrap">
+      <div class="cover-logo-row">
+        <!-- Logo SVG (network nodes) -->
+        <img src="logo.png" alt="" width="400" height="400">
+      </div>
+    </div>
+
+    <div class="cover-divider"></div>
+
+    <div>
+      <div class="cover-desc">
+        TABSCO — Tamkeen Almutahida Business Services — is a leading Saudi-based business services and consultancy firm providing integrated, end-to-end solutions for companies establishing and growing in the Kingdom of Saudi Arabia and beyond.
+      </div>
+    </div>
+
+    <a href="https://www.tabsco.sa" class="cover-website">www.tabsco.sa</a>
+  </div>
+
+  <div class="cover-right">
+    <!-- Riyadh skyline gradient placeholder -->
+    <div style="width:100%;height:100%;background:linear-gradient(135deg,#B8CFA0 0%,#8BB5A0 30%,#4A8B78 60%,#1A5C55 100%);display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center;color:rgba(255,255,255,0.25); width: 100%; height: 100%;">
+     <video autoplay muted loop style="height: 100%;" src="https://video-previews.elements.envatousercontent.com/cb6991ac-f601-4a38-8677-98ca9ea06c4e/watermarked_preview/watermarked_preview.mp4"></video>
+      </div>
+    </div>
+    <div class="cover-right-overlay"></div>
+  </div>
+  
+</div>
+
+
+<!-- ═══════════════════════════════════
+     PAGE 2 — TABLE OF CONTENTS
+═══════════════════════════════════ -->
+<div class="page toc-page">
+
+  <div class="toc-left">
+    <!-- Wave deco -->
+    <svg style="position:absolute;bottom:-10mm;right:-10mm;width:80mm;opacity:0.15" viewBox="0 0 300 200">
+      <path d="M0,100 C60,20 120,180 200,100 S280,20 300,100" stroke="#C8D4A8" stroke-width="3" fill="none"/>
+      <path d="M0,140 C60,60 120,220 200,140 S280,60 300,140" stroke="#C8D4A8" stroke-width="2" fill="none"/>
+    </svg>
+    <div class="toc-heading">Table<br>of<br>Contents</div>
+    <div class="toc-sub">
+      A comprehensive overview of TABSCO's services, vision, and capabilities designed to empower your business growth.
+    </div>
+  </div>
+
+  <div class="toc-right">
+    <div class="toc-item"><span class="toc-num">01</span><span class="toc-label">About TABSCO</span><span class="toc-arrow">›</span></div>
+    <div class="toc-item"><span class="toc-num">02</span><span class="toc-label">Why choose us</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">03</span><span class="toc-label">Our Core Values</span><span class="toc-arrow">›</span></div>
+    <div class="toc-item"><span class="toc-num">04</span><span class="toc-label">Our Services Overview</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">05</span><span class="toc-label">Our Accomplishments</span><span class="toc-arrow">›</span></div>
+
+    <div class="toc-item"><span class="toc-num">06</span><span class="toc-label">Contact Us</span><span class="toc-arrow">›</span></div>
+  </div>
+
+  <!-- Footer -->
+  <div style="
+  position:absolute;
+  bottom:8mm;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8pt;
+    color:rgb(127, 127, 127);;
+;
+  ">
+  Riyadh · London · <span style="color:var(--accent-teal)">    <a href="https://www.tabsco.sa" class="website-pill">www.tabsco.sa</a>
+</span>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════
+     PAGE 3 — ABOUT US
+═══════════════════════════════════ -->
+<div class="page" style="background:var(--cream);">
+
+  <!-- Wave deco bottom left -->
+  <svg class="wave-deco" style="bottom:-8mm;left:-5mm;width:90mm;opacity:0.10" viewBox="0 0 300 150">
+    <path d="M0,80 C50,10 100,150 160,80 S280,10 300,80" stroke="#C8D4A8" stroke-width="3" fill="none"/>
+    <path d="M0,110 C50,40 100,180 160,110 S280,40 300,110" stroke="#C8D4A8" stroke-width="2" fill="none"/>
+  </svg>
+
+  <div class="about-left">
+    <!-- Wave deco on dark bg -->
+    <svg style="position:absolute;bottom:-10mm;right:-5mm;width:70mm;opacity:0.12" viewBox="0 0 240 150">
+      <path d="M0,80 C40,10 80,150 130,80 S220,10 240,80" stroke="#C8D4A8" stroke-width="3" fill="none"/>
+    </svg>
+    <div class="section-title-light">About<br>Us</div>
+    <div class="body-text-light">
+      <p style="margin-bottom:8px;">TABSCO is a Saudi-based business services and consultancy firm providing integrated, end-to-end solutions that support companies in establishing, operating, and scaling their businesses in the Kingdom of Saudi Arabia and beyond.</p>
+      <p style="margin-bottom:8px;">We are a leading company specialising in company formation and human resources management. We possess a combination of accumulated experience in human resources practices spanning the private and public sectors.</p>
+      <p>Our team of experts ensures our services are tailored to your needs. We are cost-effective and offer clear, transparent contracting arrangements from the first consultation. We pride ourselves upon our professionalism, integrity, and credibility achieved through delivering a wide range of developmental and support services.</p>
+    </div>
+  </div>
+
+  <div class="about-right" style="left:48%;right:0;top:0;position:absolute;width:52%;height:100%;">
+    <!-- Modern Saudi business building placeholder -->
+    <div style="width:100%;height:100%;background:linear-gradient(135deg,#2A7A70 0%,#1A5C55 40%,#0F3D37 80%,#0A2820 100%);display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center;color:rgba(200,212,168,0.3); width: 100%;">
+        <img src="https://www.tabsco.sa/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-06-at-00.40.34_3114d13b.jpg" alt="" style="opacity: 0.8;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="
+  position:absolute;
+  bottom:8mm;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8pt;
+  color:rgb(127, 127, 127);;
+  ">
+  Riyadh · London · <span style="color:var(--accent-teal)">    <a href="https://www.tabsco.sa" class="website-pill">www.tabsco.sa</a>
+</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     PAGE 5 — WHY US / CORE VALUES
+═══════════════════════════════════ -->
+<div class="page" style="background:var(--cream);">
+
+  <div class="why-left">
+    <svg style="position:absolute;bottom:-10mm;right:-5mm;width:70mm;opacity:0.12" viewBox="0 0 240 150"><path d="M0,80 C40,10 80,150 130,80 S220,10 240,80" stroke="#C8D4A8" stroke-width="3" fill="none"/><path d="M0,110 C40,40 80,180 130,110 S220,40 240,110" stroke="#C8D4A8" stroke-width="2" fill="none"/></svg>
+    <div class="section-title-light" style="margin-bottom:4mm;">Why<br>Choose Us?</div>
+    <div class="value-card">
+      <div class="value-icon" style="font-size:13pt;">🤝</div>
+      <div class="value-text-wrap">
+        <div class="value-title">Integrity</div>
+        <div class="value-body">Complete HR management from a single source alongside an established network with long-term partnerships enabling us to provide a wide range of services.</div>
+      </div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon" style="font-size:13pt;">🏭</div>
+      <div class="value-text-wrap">
+        <div class="value-title">Industry Experience</div>
+        <div class="value-body">We are proud to have a multi-national interdisciplinary team with specialist expertise to provide a holistic range of outstanding HR &amp; business services.</div>
+      </div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon" style="font-size:13pt;">📈</div>
+      <div class="value-text-wrap">
+        <div class="value-title">Strategic Expansion</div>
+        <div class="value-body">Achieve consistent financial growth by expanding our market presence, committing to sustainable practices, and ensuring our success is measured by the success of our clients.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-right">
+    <div style="width:100%;height:100%;background:linear-gradient(145deg,#E8EDDA 0%,#C8D4A8 50%,#8DB5A0 100%);display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center;color:rgba(26,92,85,0.25);">
+        <img src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/f7/86/e4/39/34/v1_E10/E107BBMS.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=bcded6bc325dbc2bc48fdccf289f3601f7d299001660fe60d2930ec6dd9593cf" alt="" style="opacity: 0.8;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="
+  position:absolute;
+  bottom:8mm;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8pt;
+    color:rgb(127, 127, 127);;
+;
+  ">
+  Riyadh · London · <span style="color:var(--accent-teal)">    <a href="https://www.tabsco.sa" class="website-pill">www.tabsco.sa</a>
+</span>
+  </div>
+</div>
+<!-- ═══════════════════════════════════
+     PAGE — CORE VALUES
+═══════════════════════════════════ -->
+<div class="page" style="background:linear-gradient(135deg,#E8EDDA 0%,#F4F1E8 40%,#FFFFFF 100%);">
+  <!-- Decorative gradient glow -->
+  <div style="position:absolute;left:-80px;top:-60px;width:400px;height:400px;background:radial-gradient(circle,#3BA89833 0%,transparent 70%);"></div>
+
+  <div style="padding:16mm 20mm;">
+
+    <div style="font-family:'Playfair Display',serif;font-size:36pt;color:#223B78;font-weight:700;margin-bottom:10mm;">
+      Our core<br>values
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8mm;max-width:70%;">
+
+      <div class="core-card">
+        <div class="core-num">01</div>
+        <div class="core-title">Integrity & Transparency</div>
+      </div>
+
+      <div class="core-card">
+        <div class="core-num">02</div>
+        <div class="core-title">Client-Centric Approach</div>
+      </div>
+
+      <div class="core-card">
+        <div class="core-num">03</div>
+        <div class="core-title">Professional Excellence</div>
+      </div>
+
+      <div class="core-card">
+        <div class="core-num">04</div>
+        <div class="core-title">Efficiency & Reliability</div>
+      </div>
+
+      <div class="core-card" style="grid-column: span 2; max-width:420px;">
+        <div class="core-num">05</div>
+        <div class="core-title">Continuous Improvement</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="
+  position:absolute;
+  bottom:8mm;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8pt;
+    color:rgb(127, 127, 127);;
+;
+  ">
+  Riyadh · London · <span style="color:var(--accent-teal)">    <a href="https://www.tabsco.sa" class="website-pill">www.tabsco.sa</a>
+</span>
+  </div>
+</div>
+<!-- ═══════════════════════════════════
+     PAGE 6 — OUR SERVICES OVERVIEW
+═══════════════════════════════════ -->
+<div class="page services-page">
+
+  <div class="page-title-center" style="margin-top:12mm;">Our Services</div>
+  <div class="title-deco">
+    <div class="title-deco-line"></div>
+    <svg width="20" height="20" viewBox="0 0 20 20"><line x1="10" y1="0" x2="10" y2="20" stroke="#1A5C55" stroke-width="2"/><line x1="0" y1="10" x2="20" y2="10" stroke="#1A5C55" stroke-width="2"/></svg>
+    <div class="title-deco-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon-row">
+        <div class="svc-icon">⚖️</div>
+        <div class="svc-title">Advocacy &amp; Legal Services</div>
+      </div>
+      <div class="svc-divider"></div>
+      <div class="svc-body">Corporate compliance covering internal policies and procedures, as well as federal and state laws. Supporting M&amp;A, listings, and governance.</div>
+      <a href="https://www.tabsco.sa" class="svc-link">Explore service ›</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-row">
+        <div class="svc-icon">🏢</div>
+        <div class="svc-title">Company Formation &amp; Market Entry</div>
+      </div>
+      <div class="svc-divider"></div>
+      <div class="svc-body">We specialise in company formation with extensive experience in foreign direct investment and company formation in the Saudi market.</div>
+      <a href="https://www.tabsco.sa" class="svc-link">Explore service ›</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-row">
+        <div class="svc-icon">👥</div>
+        <div class="svc-title">HR Services &amp; Management</div>
+      </div>
+      <div class="svc-divider"></div>
+      <div class="svc-body">Providing guidance on policies and procedures, ensuring compliance with labor laws and regulations. Full payroll, employment, and HR automation.</div>
+      <a href="https://www.tabsco.sa" class="svc-link">Explore service ›</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-row">
+        <div class="svc-icon">🌐</div>
+        <div class="svc-title">Translation &amp; Interpretation</div>
+      </div>
+      <div class="svc-divider"></div>
+      <div class="svc-body">Our translation services deliver your messages accurately and effectively across languages and cultures — EN, FR, ESP, ITA, CHN, POR and more.</div>
+      <a href="https://www.tabsco.sa" class="svc-link">Explore service ›</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-row">
+        <div class="svc-icon">📱</div>
+        <div class="svc-title">Digital Innovation &amp; Marketing</div>
+      </div>
+      <div class="svc-divider"></div>
+      <div class="svc-body">Using cutting-edge and innovative strategies, we elevate your company through customised branding strategies and digital marketing solutions.</div>
+      <a href="https://www.tabsco.sa" class="svc-link">Explore service ›</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-row">
+        <div class="svc-icon">📊</div>
+        <div class="svc-title">Accounting &amp; Financial Services</div>
+      </div>
+      <div class="svc-divider"></div>
+      <div class="svc-body">We provide financial and accounting services including managing, recording and analyzing financial activities, tax returns, and Zakat compliance.</div>
+      <a href="https://www.tabsco.sa" class="svc-link">Explore service ›</a>
+    </div>
+  </div>
+    <!-- Footer -->
+  <div style="
+  position:absolute;
+  bottom:3mm;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8pt;
+  color:rgb(127, 127, 127);;
+  ">
+  Riyadh · London · <span style="color:var(--accent-teal)">    <a href="https://www.tabsco.sa" class="website-pill">www.tabsco.sa</a>
+</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE — MARKETS WE SERVE
+═══════════════════════════════════ -->
+<div class="page" style="background:var(--cream);">
+
+  <div style="padding:16mm 16mm; display:flex; gap:12mm;">
+
+    <!-- LEFT SIDE -->
+    <div style="width:42%;">
+
+      <div style="
+      font-family:'Playfair Display',serif;
+      font-size:30pt;
+      font-weight:700;
+      color:#223B78;
+      line-height:1.15;
+      margin-bottom:6mm;
+      ">
+      Your partner in<br>
+      Growth Across<br>
+      Markets
+      </div>
+
+      <div style="
+      font-size:10pt;
+      color:var(--body-text);
+      line-height:1.7;
+      max-width:90%;
+      margin-bottom:12mm;
+      ">
+      We support a diverse range of organizations across multiple industries,
+      delivering tailored business solutions that address each client's
+      operational, regulatory, and strategic needs locally and internationally.
+      </div>
+
+      <!-- Stats -->
+      <div style="display:flex; gap:12mm; align-items:center;">
+
+        <div style="border-left:2px solid var(--accent-teal); padding-left:6mm;">
+          <div style="font-size:20pt;font-weight:700;color:var(--accent-teal);">15</div>
+          <div style="font-size:8pt;color:var(--dark-teal);line-height:1.4;">
+          YEARS<br>IN KSA
+          </div>
+        </div>
+
+        <div style="border-left:2px solid var(--accent-teal); padding-left:6mm;">
+          <div style="font-size:20pt;font-weight:700;color:var(--accent-teal);">08</div>
+          <div style="font-size:8pt;color:var(--dark-teal);line-height:1.4;">
+          SERVICE<br>LINES
+          </div>
+        </div>
+
+        <div style="border-left:2px solid var(--accent-teal); padding-left:6mm;">
+          <div style="font-size:20pt;font-weight:700;color:var(--accent-teal);">02</div>
+          <div style="font-size:8pt;color:var(--dark-teal);line-height:1.4;">
+          GLOBAL<br>OFFICES
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="services-grid">
+
+      
+  <div class="svc-card">
+    <img class="market-img" src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/04/ff/0e/24/0c/v1_E10/E10H1QPE.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=c6dc613c59d65907fc88347de3580253466b666792489a4bb53db7332282cc6e">
+    <div class="svc-title">SMEs & Startups</div>
+  </div>
+
+  <div class="svc-card">
+    <img class="market-img" src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/47/3c/72/99/3c/v1_E10/E10D6QVH.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=fa4b895cd62381b89f352ba0458b3fbfb6b4ba01b8e84c85d2b3d6b916d75acf">
+    <div class="svc-title">Corporate & Enterprises</div>
+  </div>
+
+  <div class="svc-card">
+    <img class="market-img" src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/b8/44/d9/cb/ac/v1_E10/E10DD3GM.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=faca5f51d8e7828ff25825c740119dc7ac0f2e25efe0e2bb3e038993bf4e52b2">
+    <div class="svc-title">International Investors</div>
+  </div>
+
+  <div class="svc-card">
+    <img class="market-img" src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/44/3f/bf/77/6c/v1_E10/E10D6QWL.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=277840d81f2cbfe8bb41dc4c6db69860e164597f66bf05aacf0e8fd2f962d73a">
+    <div class="svc-title">Professional Firms</div>
+  </div>
+
+  <div class="svc-card">
+    <img class="market-img" src="https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/72/42/90/a1/cb/v1_E10/E109FKBI.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=1322d5345fd2ac933c2d0e018732de06e5aef3239253439d9326d55cbb971d7f">
+    <div class="svc-title">Government-Related Entities</div>
+  </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="
+  position:absolute;
+  bottom:8mm;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8pt;
+    color:rgb(127, 127, 127);;
+
+  ">
+  Riyadh · London · <span style="color:var(--accent-teal)">    <a href="https://www.tabsco.sa" class="website-pill">www.tabsco.sa</a>
+</span>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 15 — CONTACT US
+═══════════════════════════════════ -->
+<div class="page contact-page">
+
+  <!-- Logo area in corner -->
+  <div class="contact-logo-area">
+    <img src="logo.png" alt="" height="300">
+  </div>
+
+  <div class="contact-left">
+    <!-- Wave deco -->
+    <svg style="position:absolute;bottom:-8mm;right:0;width:60mm;opacity:0.12" viewBox="0 0 200 120"><path d="M0,60 C30,10 70,110 110,60 S190,10 200,60" stroke="#C8D4A8" stroke-width="3" fill="none"/><path d="M0,90 C30,40 70,140 110,90 S190,40 200,90" stroke="#C8D4A8" stroke-width="2" fill="none"/></svg>
+
+    <div>
+      <div class="section-title-light" style="font-size:28pt;margin-top:12mm;">Contact<br>Us</div>
+    </div>
+
+    <div class="contact-items">
+      <div class="contact-row">
+        <div class="contact-icon-circle" style="font-size:12pt;">📞</div>
+        <div class="contact-info">
+          +966 55 225 6880<br>
+          +44 7946 449122
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon-circle" style="font-size:12pt;">✉️</div>
+        <div class="contact-info">
+          <a href="mailto:contact@tabsco.sa">contact@tabsco.sa</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon-circle" style="font-size:12pt;">🌐</div>
+        <div class="contact-info">
+          <a href="https://www.tabsco.sa">www.tabsco.sa</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon-circle" style="font-size:11pt;">📍</div>
+        <div class="contact-info">
+          <strong style="color:var(--sage);">KSA Office:</strong> Platinum Center, Salah Ad Din Al Ayyubi Road, Al Zahra District, Riyadh, KSA<br>
+          <strong style="color:var(--sage);">UK Office:</strong> 2 Portman St, London, W1H 6DU
+        </div>
+      </div>
+    </div>
+
+    <!-- Social links -->
+    <div style="display:flex;gap:10px;margin-top:4mm;">
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--mid-teal);display:flex;align-items:center;justify-content:center;font-size:11pt;">f</div>
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--mid-teal);display:flex;align-items:center;justify-content:center;font-size:11pt;">in</div>
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--mid-teal);display:flex;align-items:center;justify-content:center;font-size:10pt;">🐦</div>
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--mid-teal);display:flex;align-items:center;justify-content:center;font-size:11pt;">📸</div>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <!-- Riyadh night skyline -->
+    <div style="width:100%;height:100%;background:linear-gradient(135deg,#0A2820 0%,#1A5C55 40%,#2A7A70 70%,#3BA898 100%);display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center;color:rgba(200,212,168,0.20); height: 100%;">
+     <video autoplay muted loop style="height: 100%;" src="https://video-previews.elements.envatousercontent.com/b9aa56c3-d10a-47b8-a3b3-7142979dc1b2/watermarked_preview/watermarked_preview.mp4"></video>
+      </div>
+    </div>
+    <div class="contact-right-overlay"></div>
+  </div>
+    <!-- Footer -->
+  <div style="
+  position:absolute;
+  bottom:8mm;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8pt;
+  color:rgb(127, 127, 127);;
+  ">
+  Riyadh · London · <span style="color:var(--accent-teal)">    <a href="https://www.tabsco.sa" class="website-pill">www.tabsco.sa</a>
+</span>
+  </div>
+</div>
+
+</body>
+</html>
